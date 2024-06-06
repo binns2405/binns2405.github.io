@@ -1,0 +1,2 @@
+# Scout System
+ Mini project
