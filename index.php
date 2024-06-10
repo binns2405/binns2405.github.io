@@ -46,27 +46,42 @@
     <title>Scout System</title>
 </head>
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Retrieve form data
-        $title = $_POST["title"];
-        $firstName = htmlspecialchars(ucwords(strtolower($_POST["firstName"])));
-        $middleName = htmlspecialchars(ucwords(strtolower($_POST["middleName"])));
-        $lastName = htmlspecialchars(ucwords(strtolower($_POST["lastName"])));
-        $dob = $_POST["dob"];
-        $email = htmlspecialchars($_POST["email"]);
-        $telephone = htmlspecialchars($_POST["telephone"]);
-        $alternativeTelephone = htmlspecialchars($_POST["alternativeTelephone"]);
-        $address1 = htmlspecialchars($_POST["address1"]);
-        $address2 = htmlspecialchars($_POST["address2"]);
-        $town = htmlspecialchars(ucwords(strtolower($_POST["town"])));
-        $postcode = htmlspecialchars($_POST["postcode"]);
-        $password = htmlspecialchars($_POST["password"]);
-        $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        // Redirect to success page
-        header("Location: usersetup.php");
-        exit();
+    if ($_GET["method"] == "l") {
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Retrieve form data
+            $lemail = htmlspecialchars(strtolower($_POST["lemail"]));
+            $lpassword = htmlspecialchars($_POST["lpassword"]);
+
+            // Redirect to success page
+            header("Location: home.php");
+            exit();
+        }
+    }
+
+    if ($_GET["method"] == "r") {   
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            // Retrieve form data
+            $title = $_POST["title"];
+            $firstName = htmlspecialchars(ucwords(strtolower($_POST["firstName"])));
+            $middleName = htmlspecialchars(ucwords(strtolower($_POST["middleName"])));
+            $lastName = htmlspecialchars(ucwords(strtolower($_POST["lastName"])));
+            $dob = $_POST["dob"];
+            $email = htmlspecialchars(strtolower($_POST["email"]));
+            $telephone = htmlspecialchars($_POST["telephone"]);
+            $alternativeTelephone = htmlspecialchars($_POST["alternativeTelephone"]);
+            $address1 = htmlspecialchars($_POST["address1"]);
+            $address2 = htmlspecialchars($_POST["address2"]);
+            $town = htmlspecialchars(ucwords(strtolower($_POST["town"])));
+            $postcode = htmlspecialchars($_POST["postcode"]);
+            $password = htmlspecialchars($_POST["password"]);
+            $confirmPassword = htmlspecialchars($_POST["confirmPassword"]);
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+            // Redirect to success page
+            header("Location: usersetup.php");
+            exit();
+        }
     }
 ?>
 <body>
@@ -78,11 +93,23 @@
                 <div class="d-grid gap-3">
                     <button class="btn btn-info" data-bs-toggle="collapse" data-bs-target="#loginForm">Login</button>
                     <div id="loginForm" class="collapse">
-                        
+                        <form action="index.php?method=l" method="POST" name="login">
+                            <div class="mb-3">
+                                <label for="lemail" class="form-label">Email Address</label>
+                                <input type="lemail" class="form-control" id="lemail" name="lemail">
+                            </div>
+                            <div class="mb-3">
+                                <label for="lpassword" class="form-label">Password</label>
+                                <input type="lpassword" class="form-control" id="lpassword" name="lpassword">
+                            </div>
+                            <div class="mb-3 d-grid">
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </div>
+                        </form>
                     </div>
                     <button class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#registerForm">Register</button>
                     <div id="registerForm" class="collapse">
-                    <form action="index.php" method="POST" name="register" autocomplete="on" onsubmit="return validateForm()">
+                    <form action="index.php?method=r" method="POST" name="register" autocomplete="on" onsubmit="return validateForm()">
                             <div class="mb-3">
                                 <label for="title" class="form-label">Title*</label>
                                 <select class="form-select" id="title" name="title" required>
@@ -119,8 +146,8 @@
                                 <input type="date" class="form-control" id="dob" name="dob" required>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email Address<span style="color: red">*</span></label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="remail" class="form-label">Email Address<span style="color: red">*</span></label>
+                                <input type="remail" class="form-control" id="remail" name="remail" required>
                             </div>
                             <div class="mb-3">
                                 <label for="telephone" class="form-label">Telephone Number<span style="color: red">*</span></label>
@@ -147,8 +174,8 @@
                                 <input type="text" class="form-control" id="postcode" name="postcode" required>
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Password<span style="color: red">*</span></label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="rpassword" class="form-label">Password<span style="color: red">*</span></label>
+                                <input type="rpassword" class="form-control" id="rpassword" name="rpassword" required>
                             </div>
                             <div class="mb-3">
                                 <label for="confirmPassword" class="form-label">Confirm Password<span style="color: red">*</span></label>
