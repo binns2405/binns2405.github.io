@@ -4,214 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Life in Scouts</title>
-    <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .profile img {
-      height: 5em;
-    }
-
-    .profile-name {
-      font-size: 2rem;
-      font-weight: bold;
-      padding-left: 1em;
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: black;
-      font-size: 1rem;
-    }
-
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .burger div {
-      width: 25px;
-      height: 3px;
-      background-color: black;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 1rem;
-        background-color: white;
-        padding: 1rem;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .burger {
-        display: flex;
-      }
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section {
-        margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    #intro {
-      text-align: center;
-      padding-bottom: 1em;
-    }
-
-    #intro img {
-      width: 100px;
-      height: auto;
-      padding-bottom: 1rem;
-    }
-
-    .content-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 2rem auto;
-    max-width: 1000px;
-    gap: 2rem;
-    padding: 1rem;
-  }
-
-  .text-block, .photo-block {
-    flex: 1 1 45%;
-    padding: 1rem;
-  }
-
-  .reverse {
-    flex-direction: row-reverse;
-  }
-
-  @media (max-width: 768px) {
-    .content-section {
-      flex-direction: column;
-    }
-    .reverse {
-      flex-direction: column;
-    }
-  }
-
-.scout-footer {
-  background-color: #fff;
-  color: #111;
-  padding: 2rem 1rem;
-  font-family: Arial, sans-serif;
-  border-top: 1px solid #ccc;
-}
-
-.footer-main {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.footer-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-}
-
-.footer-text h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.footer-text p {
-  margin: 0.25rem 0;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.footer-bottom {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #555;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.footer-bottom a {
-  color: #444;
-  text-decoration: none;
-}
-
-.footer-bottom a:hover {
-  text-decoration: underline;
-}
-
-#sections a {
-    border-radius: 20px;
-}
-
-#sections {
-    padding: 1em;
-}
-    </style>
+    <link rel="stylesheet" href="css/membership.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <header>
         <div class="profile">
-            <img src="/images/Stacked-Purple (Small).jpg" alt="Scouts logo">
+            <img src="/images/logos/Stacked-Purple (Small).jpg" alt="Scouts logo">
             <div class="profile-name">Adam Binns</div>
           </div>
           <div class="burger" onclick="toggleMenu()">
@@ -227,20 +28,14 @@
             <a href="sowa.html">Scouts of the World</a>
             <a href="explorerbelt.html">Explorer Belt</a>
           </nav>
-          <script>
-            function toggleMenu() {
-              const nav = document.getElementById('nav-links');
-              nav.classList.toggle('active');
-            }
-          </script>
         </header>
     <main>
           <section id="intro">
-            <img src="/images/logonotitle.jpg" alt="Scouts Logo" style="width: 100px; height: auto;">
+            <img src="/images/Badges/membershipbadge.png" alt="Scouts Logo" style="width: 100px; height: auto;">
             <h2 style="padding-bottom: 0.5em;">Membership</h2>
             <p>I have been around scouting my whole life. Officially joining the movement in 2011, i have spent the majority of my life as a scout and have earned all my chief scouts awards.
             <br>
-            Have a scroll or select of of the sections.
+            Have a scroll or select one of the sections.
             </p>
         </section>
 
@@ -362,7 +157,7 @@
                   <p>Photo tiles</p>
                 </div>
                 <div class="text-block">
-                  <h2>Heading Two</h2>
+                  <h2>Network</h2>
                   <p>Some Text</p>
                 </div>
               </section>
@@ -371,7 +166,7 @@
           <div id="leadership">
             <section class="content-section">
               <div class="text-block">
-                <h2>Heading One</h2>
+                <h2>Leadership</h2>
                 <p>Some Text</p>
               </div>
               <div class="photo-block">
@@ -384,7 +179,7 @@
         <footer class="scout-footer">
             <div class="footer-main">
               <div class="footer-left">
-                <img src="/images/logonotitle.jpg" alt="Scouts Logo" class="footer-logo">
+                <img src="/images/logos/logonotitle.jpg" alt="Scouts Logo" class="footer-logo">
                 <div class="footer-text">
                   <h3>Adam Binns</h3>
                   <p>Team Member (5th Blackpool Cubs)</p>
@@ -393,5 +188,6 @@
               </div>
             </div>
           </footer>
-          
+          <script src="js/header.js"></script>
 </body>
+</html>

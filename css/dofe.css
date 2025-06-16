@@ -1,0 +1,59 @@
+.content-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem auto;
+    max-width: 1000px;
+    gap: 2rem;
+    padding: 1rem;
+    }
+    
+    .text-block, .photo-block {
+    flex: 1 1 45%;
+    padding: 1rem;
+    }
+    
+    .content-section-reverse {
+    flex-direction: row-reverse;
+    }
+    
+    @media (max-width: 768px) {
+    .content-section {
+      flex-direction: column;
+    }
+    .reverse {
+      flex-direction: column;
+    }
+    }
+
+    #sections a {
+    border-radius: 20px;
+    }
+    
+    #sections {
+    padding: 1em;
+    }
+
+    #volunteering {
+    background-color: #E9A4A8;
+    }
+
+    #physical {
+    background-color: #F6EBA8;
+    }
+
+    #skills {
+    background-color: #B9D9F5;
+    }
+
+    #expedition {
+    background-color: #D6E6B9;
+    }
+
+    #residential {
+    background-color: #D9C4E5;
+    }
+
+    #celebration {
+    background-color: #B4B9DD;
+    }
