@@ -66,4 +66,59 @@
   .active, .dot:hover {
     background-color: #717171;
   }
-  
+
+#pause-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #000;
+  border-radius: 4px;
+}
+
+#pause-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #444;
+}
+
+.caption {
+  color: #fff;
+  font-size: 1rem;
+  padding: 8px 16px;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pause-btn {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: #333;
+}
+
+/* Mini slideshows inside photo-blocks */
+.photo-block .slideshow-container {
+  max-width: 600px;         /* adjust width as needed */
+  aspect-ratio: 6 / 12;      /* or 1 / 1 for square, etc. */
+  margin: auto;
+}
+
+#physical .photo-block .slideshow-container {
+  max-width: 600px;         /* adjust width as needed */
+  aspect-ratio: 3 / 4;      /* or 1 / 1 for square, etc. */
+  height: auto;
+  margin: auto;
+}
